@@ -47,6 +47,23 @@ export class NotificationsManagerComponent implements OnInit {
   addNotification() {
     //step 6
     // this.notificationsCount++;
+    /**
+     * Step 13
+     * Now, we'll use the getCountValue method within our
+     * addNotification, removeNotification, and resetCount
+     * methods. We'll have to pass the callback function from
+     * these methods to the getCountValue method. Let's start
+     * with the addNotification method first:
+     */
+    this.getCountValue((countVal) => {
+      this.notificationsService.setCount(++countVal)
+    });
+    /**
+     * step 13 part 2
+      * With the preceding code, you should already see
+      * both components reflecting the updated values
+      * correctly whenever we click the Add Notification button.
+     */
   }
 
   removeNotification() {
