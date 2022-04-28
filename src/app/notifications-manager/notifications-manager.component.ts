@@ -5,10 +5,25 @@
  * in the component and assign the service's count$ Observable
  * to the component's notificationsCount$ variable:
  */
+
+/***
+ * step 12
+ * Now that we have the setCount method in place,
+ * let's use it inside notifications-manager.component.ts
+ * to update its value based on the button clicks.
+ * In order to do so, we need to get the latest value of the
+ * notificationsCount$ Observable and then perform some action.
+ * We'll first create a getCountValue method inside
+ * NotificationsManagerComponent as follows, and will use
+ * subscribe with the first operator on the notificationsCount$
+ * Observable to get its latest value:
+ */
 import { Component, OnInit } from '@angular/core';
 //step 5
 import { Observable } from 'rxjs';
 import { NotificationsService } from '../services/notifications.service';
+//step 12
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-notifications-manager',
@@ -25,6 +40,7 @@ export class NotificationsManagerComponent implements OnInit {
   ngOnInit(): void {
     //step 5 -
     this.notificationsCount$ = this.notificationsService.count$;
+
   }
 
   //step 6 -Comment out the code that updates the notification count
@@ -46,4 +62,11 @@ export class NotificationsManagerComponent implements OnInit {
     // this.notificationsCount = 0;
   }
 
+  //step 12
+  getCountValue(callback) {
+    this.notificationsCount$
+      .pipe(
+        first()
+      ).subscribe(callback)
+  }
 }
