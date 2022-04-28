@@ -11,8 +11,14 @@ export class NotificationsService {
    *private property and we'll only update
    *it from within the service using a public method later on.
   */
-  private count: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  // private count: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
+  /**
+   * Step 10
+   * Change the initial value for the count BehaviorSubject to 10
+   * and see whether that reflects in both components:
+   */
+  private count: BehaviorSubject<number> = new BehaviorSubject<number>(10);
   /**
    * step 4
    * create an Observable named count$
