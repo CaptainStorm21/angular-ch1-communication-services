@@ -29,6 +29,7 @@ export class NotificationsService {
   constructor() { }
 
   /**
+   * step 11
    * Now, create a method named setCount in notifications.service.ts
    * so we are able to update the value of the count BehaviorSubject:
    */
