@@ -66,17 +66,29 @@ export class NotificationsManagerComponent implements OnInit {
      */
   }
 
+  /**
+   * Step 14
+   * Let's implement the same logic for
+   * removeNotification and resetCount now
+   */
   removeNotification() {
     //step 6
     // if (this.notificationsCount == 0) {
     //   return;
     // }
     // this.notificationsCount--;
+    this.getCountValue((countVal) => {
+      if (countVal === 0) {
+        return;
+      }
+      this.notificationsService.setCount(--countVal);
+    })
   }
 
   resetCount() {
     //step 6
     // this.notificationsCount = 0;
+    this.notificationsService.setCount(0);
   }
 
   //step 12
