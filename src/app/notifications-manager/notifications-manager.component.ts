@@ -27,19 +27,23 @@ export class NotificationsManagerComponent implements OnInit {
     this.notificationsCount$ = this.notificationsService.count$;
   }
 
+  //step 6 -Comment out the code that updates the notification count
   addNotification() {
-    this.notificationsCount++;
+    //step 6
+    // this.notificationsCount++;
   }
 
   removeNotification() {
-    if (this.notificationsCount == 0) {
-      return;
-    }
-    this.notificationsCount--;
+    //step 6
+    // if (this.notificationsCount == 0) {
+    //   return;
+    // }
+    // this.notificationsCount--;
   }
 
   resetCount() {
-    this.notificationsCount = 0;
+    //step 6
+    // this.notificationsCount = 0;
   }
 
 }
