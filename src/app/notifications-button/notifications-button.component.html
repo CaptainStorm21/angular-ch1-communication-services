@@ -1,8 +1,12 @@
+<!--
+  Step 9
+  Use the notificationsCount$ Observable in notifications-button.component.html with the async pipe:
+-->
 <div class="bell">
   <i class="material-icons">notifications</i>
   <div class="bell__count">
     <div class="bell__count__digits">
-      0
+      {{notificationsCount$ | async}}
     </div>
   </div>
 </div>
