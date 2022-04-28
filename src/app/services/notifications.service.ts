@@ -27,5 +27,13 @@ export class NotificationsService {
    */
   count$: Observable<number> = this.count.asObservable();
   constructor() { }
+
+  /**
+   * Now, create a method named setCount in notifications.service.ts
+   * so we are able to update the value of the count BehaviorSubject:
+   */
+  setCount(countVal) {
+    this.count.next(countVal);
+  }
 }
 
